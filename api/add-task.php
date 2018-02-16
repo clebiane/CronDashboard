@@ -1,17 +1,37 @@
 <?php
+//tratamento dos parametros
+$minute = $_GET["minute"] ?? null;
+$hour = $_GET["hour"] ?? null;
+$day = $_GET["day"] ?? null;
+$month = $_GET["month"] ?? null ;
+$weekDay = $_GET["weekDay"] ?? null;
+$time = "$minute $hour $day $month $weekDay";
+//$time = $_GET['time'] ?? null;
+$task = $_GET['task'] ?? null;
+$cron = "$time $task";
 
-$time = $_GET['time'] ?? '';
-$task = $_GET['task'] ?? '';
+if($time && $task) {
+  addTask($cron);
+  $json = json_encode(['status' => 'Tarefa agendada com sucesso!']);
+} else {
+  $json = json_encode(['status' => 'Tarefa não agendada!']);
+}
 
-$command = "crontab <<<CMD
-$time $task
-CMD";
+header('Content-type: application/json; charset=UTF-8');
+echo $json;
 
-var_dump($command);
+function addTask($cron) {
+  $crontabContent = shell_exec('crontab -l');
+  $crontabContent .= $cron;
+  // alterar permissão do contrab-temp para que outras pessoas possam escrever
+  file_put_contents('crontab-temp', $crontabContent);
+  shell_exec('crontab crontab-temp');
+}
 
-shell_exec($command);
-
-$json = json_encode(['status' => 'ok']);
-
-// header('Content-type: application/json; charset=UTF-8');
-// echo $json;
+// function addTask($cron) {
+//   $command = "crontab <<<CMD
+//     $cron
+//   CMD";
+//
+//   shell_exec($command);
+// }
