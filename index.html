@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Cron-Daasboard</title>
+  <title>Cron-Dashboard</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -60,10 +60,10 @@
         <div class="card mb-3">
           <!--Formulário para o agendamento-->
           <div class="container">
-            <form>
+            <form method="get" action="http://localhost:8080/src/crondash/api/add-task.php">
                   <div class="form-group">
-                    <label for="inputComando">Comando</label>
-                    <input type="text" class="form-control" id="inputComando" placeholder="">
+                    <label for="inputTask">Comando</label>
+                    <input type="text" class="form-control" name="task" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="enviarArquivo">Enviar Script</label>
@@ -72,25 +72,25 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="minuto">Minuto</label>
-                      <input type="text" class="form-control" id="minuto" placeholder="0 a 59">
+                      <input type="text" class="form-control" name="minute" placeholder="0 a 59">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="hora">Hora</label>
-                      <input type="text" class="form-control" id="hora" placeholder="0 a 23">
+                      <input type="text" class="form-control" name="hour" placeholder="0 a 23">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="data">Data</label>
-                      <input type="text" class="form-control" id="data" placeholder="0 a 31">
+                      <input type="text" class="form-control" name="day" placeholder="0 a 31">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="mes">Mês</label>
-                      <input type="text" class="form-control" id="mes" placeholder="1 a 12">
+                      <input type="text" class="form-control" name="month" placeholder="1 a 12">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="dia">Dia da semana</label>
-                      <input type="text" class="form-control" id="dia" placeholder="0 a 7">
+                      <input type="text" class="form-control" name="weekDay" placeholder="0 a 7">
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg">Agendar</button>
