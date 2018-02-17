@@ -37,7 +37,7 @@ Parâmetros
 Exemplo
 
 ```
-/add-task.php?time=00+23+31+12+7&task=echo+hello
+/api/add-task.php?minute=00&hour=23&day=31&month=12&weekDay=7&task=echo+hello
 ```
 
 Em caso de sucesso:
