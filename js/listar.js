@@ -1,5 +1,5 @@
-function createRow(cron) {
-  return `<tr>
+function createRow(cron, flag) {
+  return `<tr data-id="${flag}">
     <td scope="row">${cron.minute}</th>
     <td>${cron.hour}</td>
     <td>${cron.day}</td>
@@ -13,13 +13,16 @@ function createRow(cron) {
 
 const showTasksUrl = 'api/show-taks.php'
 const tasksTable = document.querySelector('table#tasks tbody')
+let tasks
 
 fetch(showTasksUrl)
   .then(res => res.json())
-  .then(tasks => {
+  .then(json => {
+    tasks = json
     let crons = ''
+    let flag = 0;
     for(let cron of tasks.crons) {
-      crons += createRow(cron)
+      crons += createRow(cron, flag++)
     }
     tasksTable.innerHTML = crons
   })
