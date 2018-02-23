@@ -16,8 +16,6 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  <!--Icons Font Awesone-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -41,12 +39,8 @@
             <span class="nav-link-text">Listar Tarefas Agendadas</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
-       </ul>
-      </div>
+      </ul>
+    </div>
   	</nav>
     <div class="content-wrapper">
       <div class="container-fluid">
@@ -65,10 +59,6 @@
                     <label for="inputTask">Comando</label>
                     <input type="text" class="form-control" name="task" placeholder="">
                   </div>
-                  <!--<div class="form-group">
-                    <label for="enviarArquivo">Enviar Script</label>
-                    <input type="file" class="form-control-file" id="enviarArquivo">
-                  </div>-->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="minuto">Minuto</label>
@@ -82,7 +72,7 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="data">Data</label>
-                      <input type="text" class="form-control" name="day" placeholder="0 a 31">
+                      <input type="text" class="form-control" name="day" placeholder="1 a 31">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="mes">Mês</label>
@@ -94,7 +84,7 @@
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg">Agendar</button>
-                  <button type="submit" class="btn btn-primary btn-lg">Cancelar</button>
+                  <button type="reset" class="btn btn-primary btn-lg">Cancelar</button>
                 </div>
            </div>
         </div>
@@ -106,32 +96,15 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
+    <!--Script para addicionar tarefas-->
     <script src="js/add.js"></script>
-   <!--<script>
-      const task = document.querySelector('input[name="task"]')
-      const minute = document.querySelector('input[name="minute"]')
-      const hour = document.querySelector('input[name="hour"]')
-      const day = document.querySelector('input[name="day"]')
-      const month = document.querySelector('input[name="month"]')
-      const weekDay = document.querySelector('input[name="weekDay"]')
-      const submit = document.querySelector('form button')
 
-      submit.addEventListener('click', event => {
-        event.preventDefault();
-        const url = `api/add-task.php?minute=${minute.value}&hour=${hour.value}&day=${day.value}&month=${month.value}&weekDay=${weekDay.value}&task=${task.value}`
-        fetch(url)
-          .then(res => location.href = 'listar.html')
-      })
-    </script>-->
   </div>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Cron-Daasboard</title>
+  <title>Cron-Dashboard</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -16,9 +16,6 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  <!--Icons Font Awesone-->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
-
   <link href="css/listar.css" rel="stylesheet">
 </head>
 
@@ -43,13 +40,9 @@
             <span class="nav-link-text">Listar Tarefas Agendadas</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
-       </ul>
-      </div>
-  	</nav>
+      </ul>
+    </div>
+  </nav>
     <div class="content-wrapper">
       <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -71,7 +64,6 @@
                       <th scope="col">Dia da Semana</th>
                       <th scope="col">Comando</th>
                       <th scope="col">Excluir Tarefa</th>
-                      <th scope="col">Editar Tarefa</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -87,16 +79,14 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
+    <!--Script para listar os agendamentos-->
     <script src="js/listar.js"></script>
   </div>
 </body>
-
 </html>
