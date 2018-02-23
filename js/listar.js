@@ -6,9 +6,16 @@ function createRow(cron, flag) {
     <td>${cron.month}</td>
     <td>${cron.weekDay}</td>
     <td>${cron.task}</td>
-    <td><input type="checkbox" class="form-check-input"></td>
-    <td><input type="checkbox" class="form-check-input"></td>
+    <td><i class="fa fa-times" onclick="removeRow(this)"></i></td>
+    <td><i class="fa fa-pencil"></i></td>
   </tr>`
+}
+
+function removeRow(edit) {
+  row = edit.parentElement.parentElement
+  row.remove()
+  const url = `api/rm-task.php?remove=${row.dataset.id}`
+  fetch(url)
 }
 
 const showTasksUrl = 'api/show-taks.php'

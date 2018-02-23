@@ -8,6 +8,7 @@ echo "Installing PHP"
 sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php > /dev/null
 sudo apt-get -y update > /dev/null
 sudo LC_ALL=C.UTF-8 apt-get -y install php7.1 php7.1-mysql > /dev/null
+sudo sed -i -r -e 's/display_errors = Off/display_errors = On/g' /etc/php/7.1/apache2/php.ini
 sudo service apache2 restart > /dev/null
 
 echo "Configurating PHP SSH2"

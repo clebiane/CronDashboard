@@ -21,6 +21,19 @@ function getTasks() {
   return $cronsArray;
 }
 
+function rmTask($remove) {
+  $crontabContent = shell_exec('crontab -l');
+  $crontabContent = explode("\n", $crontabContent);
+  foreach($crontabContent as $lineNumber => $line) {
+    if($lineNumber === intval($remove))
+      unset($crontabContent[$lineNumber]);
+  }
+  $crontabContent = implode("\n", $crontabContent);
+  shell_exec("crontab <<EOF
+${crontabContent}
+EOF");
+}
+
 function addTask($minute, $hour, $day, $month, $weekDay, $task) {
   $time = "$minute $hour $day $month $weekDay";
   $crontab = "$time $task";
