@@ -20,7 +20,6 @@ GET /api/add-task.php?time=:time&task=:command
 Parâmetros
 
 | Name | Tipo | Descrição |
-| Name | Tipo | Descrição |
 |-|-|-|
 | Minuto | String | entre 0 a 59 minutos; * para todos os minutos |
 | Hora | String | 0 a 23 horas; * para todas as horas|
@@ -125,8 +124,8 @@ $ ("crontab <<EOF
 
 Tela inicial para agendamento
 
-![Agendar Tarefa](assets/agendar.png)
+![Agendar Tarefa](agendar.png)
 
 Tela de exibição das tarefas agendadas
 
-![Listar Tarefa](assets/listar.png)
+![Listar Tarefa](listar.png)
