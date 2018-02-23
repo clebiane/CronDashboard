@@ -65,10 +65,10 @@
                     <label for="inputTask">Comando</label>
                     <input type="text" class="form-control" name="task" placeholder="">
                   </div>
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label for="enviarArquivo">Enviar Script</label>
                     <input type="file" class="form-control-file" id="enviarArquivo">
-                  </div>
+                  </div>-->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="minuto">Minuto</label>
@@ -96,8 +96,7 @@
                   <button type="submit" class="btn btn-primary btn-lg">Agendar</button>
                   <button type="submit" class="btn btn-primary btn-lg">Cancelar</button>
                 </div>
-              </form>
-          </div>
+           </div>
         </div>
       </div>
     </div>
@@ -116,7 +115,8 @@
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
-    <script>
+    <script src="js/add.js"></script>
+   <!--<script>
       const task = document.querySelector('input[name="task"]')
       const minute = document.querySelector('input[name="minute"]')
       const hour = document.querySelector('input[name="hour"]')
@@ -131,7 +131,7 @@
         fetch(url)
           .then(res => location.href = 'listar.html')
       })
-    </script>
+    </script>-->
   </div>
 </body>
 </html>
