@@ -23,20 +23,12 @@ function getTasks() {
 
 function addTask($minute, $hour, $day, $month, $weekDay, $task) {
   $time = "$minute $hour $day $month $weekDay";
-  $cron = "$time $task";
+  $crontab = "$time $task";
   $crontabContent = shell_exec('crontab -l');
-  $crontabContent .= "$cron\n";
-  // alterar permissão do contrab-temp para que outras pessoas possam escrever
-  file_put_contents('crontab-temp', $crontabContent);
-  shell_exec('crontab crontab-temp');
+  shell_exec("crontab <<EOF
+${crontabContent}${crontab}
+EOF");
+
 }
 
-// function addTask($cron) {
-//   $command = "crontab <<<CMD
-//     $cron
-//   CMD";
-//
-//   shell_exec($command);
-// }
-
- ?>
+?>
