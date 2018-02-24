@@ -17,8 +17,8 @@ Esta aplicação é útil para servidores que necessitam realizar repetidamente 
 ### Pré-requisitos
 
 -Sistema Operacional Linux
--Apache
--PHP
++Apache
++PHP
 
 ### Adiconar Tarefa
 
