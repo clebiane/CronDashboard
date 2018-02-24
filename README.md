@@ -1,12 +1,24 @@
 # CronDashboard
 
-Projeto de Desenvolvimento de interface simples para a aplicação Cron
+Projeto de desenvolvimento de uma interface simples para o gerenciamento de tarefas a serem executadas pelo serviço Cron.
 
 ## API Doc
 
 - [Adiconar Tarefa](#adiconar-tarefa)
 - [Listar Tarefa ](#listar-tarefa)
 - [Remover Tarefa](#remover-tarefa)
+
+### Aplicabilidade
+
+Esta aplicação é útil para servidores que necessitam realizar repetidamente a mesma tarefa.
+
+![Diagrama Cron](diagrama_cron.png)
+
+### Pré-requisitos
+
+-Sistema Operacional Linux
+-Apache
+-PHP
 
 ### Adiconar Tarefa
 
@@ -54,7 +66,7 @@ Para executar tal ação é necessário executar o comando:
 
 ```
 $ crontab <<EOF
-    ${crontabContent}
+    00 09 * * 1-5 echo hello
   EOF"
 ```
 
@@ -113,13 +125,6 @@ Exemplo
 GET /api/rm-task.php?remove=1
 ```
 
-Para executar tal ação é necessário executar o comando:
-
-```
-$ ("crontab <<EOF
-    ${crontabContent}
-  EOF")
-```
 ### Screenshots
 
 Tela inicial para agendamento
