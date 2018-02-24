@@ -2,17 +2,17 @@
 
 Projeto de desenvolvimento de uma interface simples para o gerenciamento de tarefas a serem executadas pelo serviço Cron.
 
+## Aplicabilidade
+
+Esta aplicação é útil para servidores que necessitam realizar repetidamente a mesma tarefa.
+
+![Diagrama Cron](diagrama_cron.png)
+
 ## API Doc
 
 - [Adiconar Tarefa](#adiconar-tarefa)
 - [Listar Tarefa ](#listar-tarefa)
 - [Remover Tarefa](#remover-tarefa)
-
-### Aplicabilidade
-
-Esta aplicação é útil para servidores que necessitam realizar repetidamente a mesma tarefa.
-
-![Diagrama Cron](diagrama_cron.png)
 
 ### Pré-requisitos
 
@@ -25,8 +25,7 @@ Esta aplicação é útil para servidores que necessitam realizar repetidamente 
 Esse serviço tem a finalidade de adicionar tarefas a serem executadas pelo Cron
 
 ```
-GET /api/add-task.php?time=:time&task=:command
-
+GET /api/add-task.php?minute=minuto&hour=hora&day=dia&month=mes&weekDay=diaSemana&task=comand
 ```
 
 Parâmetros
